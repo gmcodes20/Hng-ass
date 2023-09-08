@@ -30,7 +30,7 @@
           <p class="row-details" data-testid="currentDayOfTheWeek"></p>
         </div>
         <div class="row">
-          <h3 class="row-info">Current UTC time</h3>
+          <h3 class="row-info">Current UTC Time in Milliseconds</h3>
           <p class="row-details" data-testid="currentUTCTime"></p>
         </div>
         <div class="row">
@@ -39,7 +39,7 @@
         </div>
         <div class="row">
           <a
-            href=""
+            href="https://github.com/gmcodes20/Hng-ass"
             data-testid="“githubURL”"
             class="githublink btn btn-primary"
             >GitHub URL</a
@@ -63,15 +63,11 @@
       const el = document.querySelector("[data-testid='currentDayOfTheWeek']");
       el.innerHTML = dayList[day];
 
-      const [hours, minutes, seconds] = [
-        today.getUTCHours(),
-        today.getUTCMinutes(),
-        today.getUTCSeconds(),
-      ];
+      const time = today.getTime();
 
       document.querySelector(
         "[data-testid='currentUTCTime']"
-      ).innerHTML = `${hours}:${minutes}:${seconds}`;
+      ).innerHTML = `${time}`;
     </script>
   </body>
 </html>
